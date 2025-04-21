@@ -20,9 +20,6 @@ public class AuthController {
     public AuthController(AuthService authService) {
         this.authService = authService;
     }
-
-
-
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Login login) {
         if (authService.login(login.getUsername(), login.getPassword())) {

@@ -12,13 +12,10 @@ public class UserController {
 
 
     @PostMapping("/set_password")
-
     @GetMapping("/me")
     public ResponseEntity<?> get(@RequestBody Login login) {
         return null;
     }
-
-
     @PatchMapping("/me")
     @PatchMapping("/me/image")
 }

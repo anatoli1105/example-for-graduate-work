@@ -8,7 +8,6 @@ public class User {
     private String phone;
      private User  role;
     private String image;
-
     public User(String email, String firstName, int id, String image, String lastName, String phone, User role) {
         this.email = email;
         this.firstName = firstName;

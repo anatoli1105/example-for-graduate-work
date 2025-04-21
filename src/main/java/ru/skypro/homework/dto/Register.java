@@ -21,7 +21,6 @@ public class Register {
         this.username = username;
     }
     public Register(){}
-
     public String getFirstName() {
         return firstName;
     }

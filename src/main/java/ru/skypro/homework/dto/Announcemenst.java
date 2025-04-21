@@ -14,7 +14,6 @@ public class Announcemenst {
         this.price = price;
         this.title = title;
     }
-
     public Announcemenst() {
     }
 
