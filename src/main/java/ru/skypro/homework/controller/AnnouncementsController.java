@@ -2,8 +2,7 @@ package ru.skypro.homework.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.skypro.homework.dto.Announcemenst;
-import ru.skypro.homework.dto.Login;
+import ru.skypro.homework.model.Announcemenst;
 
 @RestController
 @RequestMapping
