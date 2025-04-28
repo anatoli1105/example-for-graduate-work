@@ -3,6 +3,7 @@ package ru.skypro.homework.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Announcemenst {
@@ -19,15 +20,19 @@ public class Announcemenst {
     @JoinColumn(name = "user_password")
     @JsonIgnore
     private User user;
+    @OneToMany(mappedBy = "announcements")
+    private Collection<Comment> comments;
 
 
-    public Announcemenst(int author, String image, int pk, int price, String title,User user) {
+    public Announcemenst(int author, String image, int pk, int price,
+                         String title,User user,Collection<Comment> comments) {
         this.author = author;
         this.image = image;
         this.pk = pk;
         this.price = price;
         this.title = title;
         this.user=user;
+        this.comments=comments;
     }
     public Announcemenst() {
     }
@@ -78,5 +83,13 @@ public class Announcemenst {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Collection<Comment> comments) {
+        this.comments = comments;
     }
 }

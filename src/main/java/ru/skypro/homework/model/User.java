@@ -10,15 +10,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-     private String email;
+    private String email;
     private String firstName;
     private String lastName;
     private String phone;
-     private Role role;
+    private Role role;
     private String image;
     private String password;
-
-
 
 
     @OneToMany(mappedBy = "user")
@@ -26,7 +24,7 @@ public class User {
 
     public User(String email, String firstName, String image,
                 String lastName, String phone, Role role,
-                String password,Collection<Announcemenst> announcemensts) {
+                String password, Collection<Announcemenst> announcemensts) {
         this.email = email;
         this.firstName = firstName;
 
@@ -34,7 +32,7 @@ public class User {
         this.lastName = lastName;
         this.phone = phone;
         this.role = role;
-        this.password=password;
+        this.password = password;
         this.announcemensts = announcemensts;
     }
 
@@ -56,7 +54,6 @@ public class User {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
 
 
     public String getImage() {
