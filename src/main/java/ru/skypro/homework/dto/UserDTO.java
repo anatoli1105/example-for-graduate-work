@@ -1,44 +1,24 @@
-package ru.skypro.homework.model;
+package ru.skypro.homework.dto;
 
-import ru.skypro.homework.dto.Role;
+public class UserDTO {
 
-import javax.persistence.*;
-import java.util.Collection;
-
-@Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-     private String email;
+    private String email;
     private String firstName;
     private String lastName;
     private String phone;
-     private Role role;
+    private Role role;
     private String image;
-    private String password;
 
-
-
-
-    @OneToMany(mappedBy = "user")
-    private Collection<Announcemenst> announcemensts;
-
-    public User(String email, String firstName, String image,
-                String lastName, String phone, Role role,
-                String password,Collection<Announcemenst> announcemensts) {
+    public UserDTO(String email, String firstName, String image, String lastName, String phone, Role role) {
         this.email = email;
         this.firstName = firstName;
-
         this.image = image;
         this.lastName = lastName;
         this.phone = phone;
         this.role = role;
-        this.password=password;
-        this.announcemensts = announcemensts;
     }
 
-    public User() {
+    public UserDTO() {
     }
 
     public String getEmail() {
@@ -56,8 +36,6 @@ public class User {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
-
 
     public String getImage() {
         return image;
@@ -89,21 +67,5 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
-    }
-
-    public Collection<Announcemenst> getAnnouncemensts() {
-        return announcemensts;
-    }
-
-    public void setAnnouncemensts(Collection<Announcemenst> announcemensts) {
-        this.announcemensts = announcemensts;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

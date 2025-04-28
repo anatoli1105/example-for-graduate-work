@@ -1,35 +1,21 @@
-package ru.skypro.homework.model;
+package ru.skypro.homework.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.persistence.*;
-
-@Entity
-public class Announcemenst {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class AnnouncementsDTO {
     private int author;
     private String image;
     private int pk;
     private int price;
     private String title;
 
-    @ManyToOne
-    @JoinColumn(name = "user_password")
-    @JsonIgnore
-    private User user;
-
-
-    public Announcemenst(int author, String image, int pk, int price, String title,User user) {
+    public AnnouncementsDTO(int author, String image, int pk, int price, String title) {
         this.author = author;
         this.image = image;
         this.pk = pk;
         this.price = price;
         this.title = title;
-        this.user=user;
     }
-    public Announcemenst() {
+
+    public AnnouncementsDTO() {
     }
 
     public int getAuthor() {
@@ -70,13 +56,5 @@ public class Announcemenst {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }
