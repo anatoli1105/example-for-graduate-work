@@ -23,7 +23,7 @@ public ResponseEntity<?> getAll() {
     public ResponseEntity<?> delete(@RequestBody int id) {
        return null;
     }
-    @PatchMapping("ads/{}ad")
+    @PatchMapping("/ads/{}ad")
     public ResponseEntity<?> change(@RequestBody int id) {
        return null;
     }

@@ -10,7 +10,7 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private int author;
+    private User author;
     private String authorImage;
     private String authorFirstName;
     private int createdAt;
@@ -20,9 +20,11 @@ public class Comment {
     @JoinColumn(name = "announcements_author")
     @JsonIgnore
     private Announcemenst announcemenst;
+    @OneToOne(mappedBy = "user")
+   private User user;
 
-    public Comment(int author, String authorFirstName, String authorImage, int createdAt, int pk,
-                   String text,Announcemenst announcemenst) {
+    public Comment(User author, String authorFirstName, String authorImage, int createdAt, int pk,
+                   String text,Announcemenst announcemenst,User user) {
         this.author = author;
         this.authorFirstName = authorFirstName;
         this.authorImage = authorImage;
@@ -30,16 +32,17 @@ public class Comment {
         this.pk = pk;
         this.text = text;
         this.announcemenst=announcemenst;
+        this.user=user;
     }
 
     public Comment() {
     }
 
-    public int getAuthor() {
+    public User getAuthor() {
         return author;
     }
 
-    public void setAuthor(int author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
 
@@ -97,5 +100,13 @@ public class Comment {
 
     public void setAnnouncemenst(Announcemenst announcemenst) {
         this.announcemenst = announcemenst;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
