@@ -1,13 +1,13 @@
 package ru.skypro.homework.dto;
 
-public class Announcemenst {
+public class AnnouncementsDTO {
     private int author;
     private String image;
     private int pk;
     private int price;
     private String title;
 
-    public Announcemenst(int author, String image, int pk, int price, String title) {
+    public AnnouncementsDTO(int author, String image, int pk, int price, String title) {
         this.author = author;
         this.image = image;
         this.pk = pk;
@@ -15,7 +15,7 @@ public class Announcemenst {
         this.title = title;
     }
 
-    public Announcemenst() {
+    public AnnouncementsDTO() {
     }
 
     public int getAuthor() {

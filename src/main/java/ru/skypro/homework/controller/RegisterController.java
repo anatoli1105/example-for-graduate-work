@@ -15,8 +15,6 @@ public class RegisterController {
     private final AuthService authService;
 
 
-
-
     public RegisterController(AuthService authService) {
         this.authService = authService;
     }
