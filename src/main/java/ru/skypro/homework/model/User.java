@@ -21,22 +21,21 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private Collection<Announcemenst> announcemensts;
-    @OneToOne(mappedBy = "comment")
-   private Comment comment;
+    @OneToMany(mappedBy = "comment")
+    private Collection<Comment> comment;
 
     public User(String email, String firstName, String image,
                 String lastName, String phone, Role role,
-                String password, Collection<Announcemenst> announcemensts,Comment comment) {
+                String password, Collection<Announcemenst> announcemensts, Collection<Comment> comment) {
         this.email = email;
         this.firstName = firstName;
-
         this.image = image;
         this.lastName = lastName;
         this.phone = phone;
         this.role = role;
         this.password = password;
         this.announcemensts = announcemensts;
-        this.comment=comment;
+        this.comment = comment;
     }
 
     public User() {
@@ -107,11 +106,11 @@ public class User {
         this.password = password;
     }
 
-    public Comment getComment() {
+    public Collection<Comment> getComment() {
         return comment;
     }
 
-    public void setComment(Comment comment) {
+    public void setComment(Collection<Comment> comment) {
         this.comment = comment;
     }
 }

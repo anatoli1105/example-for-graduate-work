@@ -15,10 +15,10 @@ public class RegisterController {
     private final AuthService authService;
 
 
-
     public RegisterController(AuthService authService) {
         this.authService = authService;
     }
+
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody Register register) {
         if (authService.register(register)) {

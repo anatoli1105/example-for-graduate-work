@@ -10,16 +10,19 @@ public class CommentController {
     public ResponseEntity<?> getAll() {
         return null;
     }
+
     @PostMapping("/{id}/comments")
     public ResponseEntity<?> addComment(@RequestBody int id) {
         return null;
     }
+
     @DeleteMapping("/{adId}/comments/{commentId}")
-    public ResponseEntity<?> getInfo(@RequestBody int id,@RequestBody int commentId) {
+    public ResponseEntity<?> getInfo(@RequestBody int id, @RequestBody int commentId) {
         return null;
     }
+
     @PatchMapping("/{adId}/comments/{commentId}")
-    public ResponseEntity<?> changeComment(@RequestBody int id,@RequestBody int commentId) {
+    public ResponseEntity<?> changeComment(@RequestBody int id, @RequestBody int commentId) {
         return null;
     }
 

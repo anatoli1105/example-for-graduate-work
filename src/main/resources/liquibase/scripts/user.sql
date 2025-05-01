@@ -8,12 +8,8 @@ authorImage text,
 authorFirstName text,
 createdAt int,
 pk int,
-"text" text,
-FOREIGN KEY (author) REFERENCES announcements(author)
+foreign key (author) references announcements(author)
 )
-
-
-
 -- changelog user2:2
 create table Announcements(
 id bigint,
@@ -22,7 +18,7 @@ image text,
 pk int,
 price int,
 title text,
-FOREIGN KEY (author) REFERENCES "User"(firstname)
+foreign key (author) references "User"(firstname)
 )
 -- changelog user2:3
 create table "User"(
@@ -34,7 +30,7 @@ phone text,
 role text,
 image text,
 password text not null,
-FOREIGN KEY ("password") REFERENCES announcements
+foreign key ("password") references announcements
 )
 
 

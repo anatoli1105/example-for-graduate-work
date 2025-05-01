@@ -15,14 +15,17 @@ public class UserController {
     public ResponseEntity<?> changePassword(@RequestBody Login login) {
         return null;
     }
+
     @GetMapping("/me")
     public ResponseEntity<?> get(@RequestBody Login login) {
         return null;
     }
+
     @PatchMapping("/me")
     public ResponseEntity<?> newInfoUser(@RequestBody Register register) {
         return null;
     }
+
     @PatchMapping("/me/image")
     public ResponseEntity<?> newImage(@RequestBody Announcemenst announcemenst) {
         return null;

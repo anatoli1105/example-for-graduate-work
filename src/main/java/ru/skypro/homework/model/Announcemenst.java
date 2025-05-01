@@ -25,15 +25,16 @@ public class Announcemenst {
 
 
     public Announcemenst(int author, String image, int pk, int price,
-                         String title,User user,Collection<Comment> comments) {
+                         String title, User user, Collection<Comment> comments) {
         this.author = author;
         this.image = image;
         this.pk = pk;
         this.price = price;
         this.title = title;
-        this.user=user;
-        this.comments=comments;
+        this.user = user;
+        this.comments = comments;
     }
+
     public Announcemenst() {
     }
 

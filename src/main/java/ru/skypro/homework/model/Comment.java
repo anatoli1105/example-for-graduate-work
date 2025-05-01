@@ -20,19 +20,21 @@ public class Comment {
     @JoinColumn(name = "announcements_author")
     @JsonIgnore
     private Announcemenst announcemenst;
-    @OneToOne(mappedBy = "user")
-   private User user;
+    @ManyToOne
+    @JoinColumn(name = "user_firstName")
+    @JsonIgnore
+    private User user;
 
     public Comment(User author, String authorFirstName, String authorImage, int createdAt, int pk,
-                   String text,Announcemenst announcemenst,User user) {
+                   String text, Announcemenst announcemenst, User user) {
         this.author = author;
         this.authorFirstName = authorFirstName;
         this.authorImage = authorImage;
         this.createdAt = createdAt;
         this.pk = pk;
         this.text = text;
-        this.announcemenst=announcemenst;
-        this.user=user;
+        this.announcemenst = announcemenst;
+        this.user = user;
     }
 
     public Comment() {
